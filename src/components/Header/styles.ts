@@ -13,6 +13,10 @@ export const Nav = styled.nav`
     align-items: center;
     justify-content: space-around ;
     width: 100%;
+
+    a {
+      color: ${({theme}) => theme.palette.common.text}
+    }
     
   ul {
     display: flex;

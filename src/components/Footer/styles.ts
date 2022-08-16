@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
 export const Container = styled.footer`
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items:center;
   justify-content: center;
   flex-direction: column;
   margin-top: 2rem;
-  padding: 5rem;
+  padding: 5rem 0;
   background-color:${({theme}) => theme.palette.common.secondary};
   overflow: hidden;
+
   p {
     margin-top: 2rem;
   }

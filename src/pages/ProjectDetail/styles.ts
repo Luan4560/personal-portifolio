@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  height: 100vh;
   padding: 3rem 0 0 0;
+  margin: 0 auto;
 
   display: flex;
   align-items: center;
@@ -41,12 +41,12 @@ export const Container = styled.div`
       color: ${({ theme }) => theme.palette.common.text};
       
       h1 {
-        margin: 1rem 0;
+        margin: 1.5rem 0;
         font-weight: 400;
       }
 
       .tag-content {
-        width: 10rem;
+        width: 9rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -56,7 +56,7 @@ export const Container = styled.div`
         background: ${({theme}) => theme.palette.common.comment};
         border-radius: 1rem;
         color: ${({theme}) => theme.palette.common.text};
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
         transition: all .2s ease-in-out;
 
         &:hover {
@@ -64,6 +64,36 @@ export const Container = styled.div`
           color: ${({theme}) => theme.palette.common.purple}
         }
        }
+      }
+
+      .links-content {
+        margin-bottom: 1.5rem;
+        width: 9rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+          font-weight: bold;
+          color: ${({theme}) => theme.palette.common.pink};
+          border-bottom: 1px solid ${({theme}) => theme.palette.common.pink};
+          transition: all .2s ease-in-out;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .description-p-content {
+        width: 100%;
+
+        p {
+          text-align: justify;
+          font-size: 1.3rem;
+          line-height: 30px;
+          letter-spacing: 1px;
+        }
       }
     }
   }

@@ -1,40 +1,81 @@
-import { Card } from "../../components/Card";
-
-import ProfileImage from '../../assets/profile.png';
-import * as SC from './styles'
 import { Link } from "react-router-dom";
+import { gql, useQuery } from "@apollo/client";
+import { Card } from "../../components/Card";
+import * as SC from "./styles";
+import { Loading } from "../../components/Loading";
 
+interface AuthorData {
+  id: string;
+  bio?: string;
+  intro: string;
+  name: string;
+  picture: {
+    url: string;
+  };
+}
+
+interface ProjectsData {
+  id: string;
+  description: string;
+  name: string;
+  slug: string;
+  image: {
+    url: string;
+  }[];
+}
+
+const GET_PROFILE_QUERY = gql`
+  query {
+    authors {
+      id
+      name
+      bio
+      intro
+      picture {
+        url
+      }
+    }
+    projects {
+      id
+      slug
+      name
+      description
+      image {
+        url
+      }
+    }
+  }
+`;
 export const Home = () => {
+  const { data, loading, error } = useQuery(GET_PROFILE_QUERY);
+
+  if (loading) return <Loading />;
+
   return (
-   <>
+    <>
       <SC.Container>
         <h1>Welcome to my portifolio</h1>
 
-        <section>
-          <div>
-            <h2>Luan Nascimento</h2>
-            <p>
-              Hi, my name is Luan!😎
-              I am a frontend developer with focus on React, React Native, 
-              Next.JS and Typescript.
-            </p>
-          </div>
-          <div className="profile-image">
-            <img src={ProfileImage} alt="" />
-          </div>
-        </section>
+        {data?.authors.map((item: AuthorData) => (
+          <section key={item.id}>
+            <div>
+              <h2>{item.name}</h2>
+              <p>{item.intro}</p>
+            </div>
+            <div className="profile-image">
+              <img src={item.picture.url} alt="Profile Image" />
+            </div>
+          </section>
+        ))}
 
         <section className="card-content">
-          <Link to="/project-detail">
-            <Card image="https://images.unsplash.com/photo-1656765152413-a8b972b66cdb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"/>
-          </Link>
-          <Card image="https://images.unsplash.com/photo-1656765152413-a8b972b66cdb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"/>
-          <Card image="https://images.unsplash.com/photo-1656765152413-a8b972b66cdb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"/>
-          <Card image="https://images.unsplash.com/photo-1656765152413-a8b972b66cdb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"/>
-          <Card image="https://images.unsplash.com/photo-1656765152413-a8b972b66cdb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"/>
+          {data?.projects.map((item: ProjectsData) => (
+            <Link to="/projects" key={item.id}>
+              <Card image={item.image[0].url} />
+            </Link>
+          ))}
         </section>
-
       </SC.Container>
-   </>
-  )
-}
+    </>
+  );
+};

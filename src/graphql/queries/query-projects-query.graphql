@@ -1,0 +1,20 @@
+  query GET_PROFILE_QUERY {
+    authors {
+      id
+      name
+      bio
+      intro
+      picture {
+        url
+      }
+    }
+  projects {
+    id
+    slug
+    name
+    description
+    image {
+      url
+    }
+  }
+}

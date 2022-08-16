@@ -9,22 +9,21 @@ interface HeaderProps {
 export const Header = ({ title }: HeaderProps) => {
   return (
     <SC.Container>
-
       <SC.Nav>
-        <div>
+        <Link to="/">
           <h2>{title}</h2>
-        </div>
+        </Link>
         
         <div>
           <ul>
             <li>
               <Link to="/">Portifolio</Link>
             </li>
+              <li>
+                <Link to="/blog">Blog</Link>
+              </li>
             <li>
               <Link to="/">About</Link>
-            </li>
-            <li>
-              <Link to="/">Blog</Link>
             </li>
           </ul>
         </div>

@@ -39,8 +39,8 @@ export const Container = styled.div`
   .profile-image img{
       width: 13rem;
       height: 13rem;
-      border-radius: 50%;
-      border: 4px solid ${({theme}) => theme.palette.common.secondary};
+      border-radius: 30%;
+      border: 2px solid ${({theme}) => theme.palette.common.text};
     }
   }
 

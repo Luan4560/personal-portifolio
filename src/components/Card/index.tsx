@@ -7,7 +7,7 @@ interface CardProps {
 
 export const Card = ({image}: CardProps) => {
   const [showDescription, setShowDescription] = useState(false);
-  console.log(showDescription)
+  
   return (
     <SC.Container 
       onMouseEnter={() => setShowDescription(true)}

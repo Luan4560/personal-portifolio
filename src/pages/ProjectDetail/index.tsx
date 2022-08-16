@@ -1,3 +1,4 @@
+import ImageC from '../../assets/carters.png'
 import * as SC from './styles'
 
 export const ProjectDetail = () => {
@@ -5,7 +6,7 @@ export const ProjectDetail = () => {
     <SC.Container>
       <main>
         <div className='image-content'>
-          <img src="https://images.unsplash.com/photo-1656765152413-a8b972b66cdb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Project Image" />
+          <img src={ImageC} alt="Project Image" />
         </div>
 
         <div className='description-content'>
@@ -13,7 +14,6 @@ export const ProjectDetail = () => {
 
           <div className="tag-content">
             <a href='/'>HTML</a>
-          
             <a href='/'>CSS</a>
           </div>
 
