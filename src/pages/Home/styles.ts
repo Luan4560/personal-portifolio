@@ -25,7 +25,6 @@ export const Container = styled.div`
       font-size: 1.875rem;
       font-weight: bold;
       opacity: 0.8;
-
     }
     
     p {
@@ -37,14 +36,15 @@ export const Container = styled.div`
     }
 
   .profile-image img{
-      width: 13rem;
-      height: 13rem;
-      border-radius: 30%;
-      border: 2px solid ${({theme}) => theme.palette.common.text};
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      border: 2px solid ${({ theme }) => theme.palette.common.text};
     }
   }
 
   .card-content {
+    width: 65%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     grid-gap: 2rem;

@@ -46,23 +46,17 @@ export const Container = styled.div`
       }
 
       .tag-content {
-        width: 9rem;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        gap: 1rem;
 
-       a {
+       p {
         padding: 0.3rem 1rem;
-        background: ${({theme}) => theme.palette.common.comment};
+        background: ${({ theme }) => theme.palette.common.comment};
         border-radius: 1rem;
-        color: ${({theme}) => theme.palette.common.text};
+        color: ${({ theme }) => theme.palette.common.text};
         margin-bottom: 1.5rem;
         transition: all .2s ease-in-out;
-
-        &:hover {
-          transform: scale(1.1);
-          color: ${({theme}) => theme.palette.common.purple}
-        }
        }
       }
 
@@ -75,26 +69,35 @@ export const Container = styled.div`
 
         a {
           font-weight: bold;
-          color: ${({theme}) => theme.palette.common.pink};
-          border-bottom: 1px solid ${({theme}) => theme.palette.common.pink};
+          color: ${({ theme }) => theme.palette.common.pink};
+          border-bottom: 1px solid ${({ theme }) => theme.palette.common.pink};
           transition: all .2s ease-in-out;
 
           &:hover {
             transform: scale(1.1);
           }
         }
+
+        p {
+          font-weight: bold;
+          color: ${({ theme }) => theme.palette.common.textTwo};
+          border-bottom: 1px solid ${({ theme }) => theme.palette.common.textTwo};
+
+          &:hover {
+            cursor: not-allowed;
+          }
+        }
       }
 
       .description-p-content {
-        width: 100%;
 
         p {
-          text-align: justify;
           font-size: 1.3rem;
           line-height: 30px;
           letter-spacing: 1px;
         }
       }
+   
     }
   }
 `

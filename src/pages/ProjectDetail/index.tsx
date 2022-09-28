@@ -1,41 +1,48 @@
-import ImageC from '../../assets/carters.png'
-import * as SC from './styles'
+import { useParams } from "react-router-dom";
+import { Loading } from "../../components/Loading";
+import { useProjectDetailQuery } from "../../graphql/generated";
+import * as SC from "./styles";
 
 export const ProjectDetail = () => {
+  const { id } = useParams();
+
+  const { data, loading } = useProjectDetailQuery({
+    variables: {
+      slug: id || "",
+    },
+  });
+
+  if (loading) return <Loading />;
+
+  const hasSourceCode =
+    data?.project?.sourceCode === "no-access" ? true : false;
+
   return (
     <SC.Container>
       <main>
-        <div className='image-content'>
-          <img src={ImageC} alt="Project Image" />
+        <div className="image-content">
+          <img src={`${data?.project?.image[0].url}`} alt="Project Image" />
         </div>
 
-        <div className='description-content'>
-          <h1>Tribute Site</h1>
+        <div className="description-content">
+          <h1>{data?.project?.name}</h1>
 
           <div className="tag-content">
-            <a href='/'>HTML</a>
-            <a href='/'>CSS</a>
+            {data?.project?.tags.map((tag) => (
+              <p key={tag}>{tag}</p>
+            ))}
           </div>
 
           <div className="links-content">
             <a href="/">Demo</a>
-            <a href="/">Source Code</a>
+            {!hasSourceCode ? <a href="/">Source Code</a> : <p>Source code</p>}
           </div>
 
           <div className="description-p-content">
-            <p>
-              Haerent hoc fibras cumque, eburno manus tenuique Derceti adversam 
-              regem, et colores eunti victor: nulla? Ora notas circumdare, te 
-              fuerant potens levant incognita pectore a. Satis Pelethronium 
-              ululatibus operique simili rogabat sum sed latos; est ensem; 
-              quia sidere deserto solantia pedibus. Sua altis quem Balearica 
-              tu Persea minuendo, et fuit Persea cur certa induitur observo. 
-              Infamia in inquit virgae epulas auro me Achivi negabat harundine.
-            </p>
+            <p>{data?.project?.description}</p>
           </div>
-
         </div>
       </main>
     </SC.Container>
-  )
-}
+  );
+};

@@ -1,8 +1,7 @@
-  query GET_PROFILE_QUERY {
+  query Home {
     authors {
       id
       name
-      bio
       intro
       picture {
         url

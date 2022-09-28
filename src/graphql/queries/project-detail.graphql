@@ -1,0 +1,13 @@
+query ProjectDetail($slug: String!) {
+  project(where: {slug: $slug}) {
+    id
+    image {
+      url
+    }
+    name
+    description
+    demo
+    tags
+    sourceCode
+  }
+}

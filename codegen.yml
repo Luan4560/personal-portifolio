@@ -1,5 +1,7 @@
 # Configuration for a React URQL setup
 # Passamos a URL da no api, haviamos colocado ela no no env.
+overwrite: true,
+
 schema: https://api-eu-west-2.hygraph.com/v2/cl5kau5152qdk01ujhq92bnda/master
 
 documents: './src/graphql/**/*.graphql'
@@ -15,3 +17,7 @@ generates:
       withHooks: true
       withHOC: false
       withComponent: false
+
+      hooks:
+      afterAllFileWrite:
+      - eslint --fix
