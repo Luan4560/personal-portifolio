@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Loading } from "../../components/Loading";
 import { useProjectDetailQuery } from "../../graphql/generated";
+
 import * as SC from "./styles";
 
 export const ProjectDetail = () => {
@@ -34,8 +35,12 @@ export const ProjectDetail = () => {
           </div>
 
           <div className="links-content">
-            <a href="/">Demo</a>
-            {!hasSourceCode ? <a href="/">Source Code</a> : <p>Source code</p>}
+            <a href={`${data?.project?.demo}`}>Demo</a>
+            {!hasSourceCode ? (
+              <a href={`${data?.project?.sourceCode}`}>Source Code</a>
+            ) : (
+              <p>Source code</p>
+            )}
           </div>
 
           <div className="description-p-content">
