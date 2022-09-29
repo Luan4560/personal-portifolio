@@ -5,7 +5,7 @@ import { useHomeQuery } from "../../graphql/generated";
 import * as SC from "./styles";
 
 export const Home = () => {
-  const { data, loading, error } = useHomeQuery();
+  const { data, loading } = useHomeQuery();
 
   if (loading) return <Loading />;
 

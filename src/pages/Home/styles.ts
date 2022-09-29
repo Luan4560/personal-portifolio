@@ -35,7 +35,7 @@ export const Container = styled.div`
       opacity: 0.8;
     }
 
-  .profile-image img{
+  .profile-image img {
       width: 10rem;
       height: 10rem;
       border-radius: 50%;
@@ -55,5 +55,52 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
     object-fit: cover;
+  }
+
+  /* Mobile */
+  @media(max-width: 48rem) {
+    h1 {
+      text-align: center;
+    }
+
+    section {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+
+      h2 {
+        margin-top: 1.5rem;
+      }
+    }
+
+    .card-content {
+      grid-template-columns: 1fr 1fr ;
+      grid-gap: 2rem;
+    }
+  }
+
+  @media(max-width: 26.5625rem) {
+    h1{
+      font-size: 1.5rem;
+    }
+
+    section {
+      text-align: center;
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      p {
+        width: 23rem;
+        font-size: 1rem;
+        margin: 0;
+      }
+    }
+
+    .card-content {
+      grid-template-columns: 1fr ;
+      grid-gap: 2rem;
+    }
   }
 `

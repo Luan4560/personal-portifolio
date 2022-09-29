@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-position: relative;
-overflow: hidden;
-border-radius: 10px;
-cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid ${({ theme }) => theme.palette.common.text};
 
 img {
   border-radius: 10px;
@@ -26,7 +27,6 @@ export const Description = styled.div`
   opacity: 0;
   transition: 0.5s;
   
-
   &:hover {
     opacity: 100;
   }
@@ -41,7 +41,6 @@ export const Description = styled.div`
     width: 90% !important;
     font-size: 1rem !important;
     opacity: 0.8 !important;
-  
   }
 ;
 `

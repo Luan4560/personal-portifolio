@@ -2566,12 +2566,14 @@ export type Post = Node & {
   /** User that created this document */
   createdBy?: Maybe<User>;
   date: Scalars['Date'];
+  description?: Maybe<Scalars['String']>;
   /** Get the document in other stages */
   documentInStages: Array<Post>;
   /** List of Post versions */
   history: Array<Version>;
   /** The unique identifier */
   id: Scalars['ID'];
+  previewContent?: Maybe<Scalars['String']>;
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']>;
   /** User that last published this document */
@@ -2668,6 +2670,8 @@ export type PostCreateInput = {
   coverImage: AssetCreateOneInlineInput;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   date: Scalars['Date'];
+  description?: InputMaybe<Scalars['String']>;
+  previewContent?: InputMaybe<Scalars['String']>;
   slug?: InputMaybe<Scalars['String']>;
   tags: Array<Scalars['String']>;
   title: Scalars['String'];
@@ -2761,6 +2765,25 @@ export type PostManyWhereInput = {
   date_not?: InputMaybe<Scalars['Date']>;
   /** All values that are not contained in given list. */
   date_not_in?: InputMaybe<Array<InputMaybe<Scalars['Date']>>>;
+  description?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  description_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  description_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values that are not equal to given value. */
+  description_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  description_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  description_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values not starting with the given string. */
+  description_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  description_starts_with?: InputMaybe<Scalars['String']>;
   documentInStages_every?: InputMaybe<PostWhereStageInput>;
   documentInStages_none?: InputMaybe<PostWhereStageInput>;
   documentInStages_some?: InputMaybe<PostWhereStageInput>;
@@ -2783,6 +2806,25 @@ export type PostManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
+  previewContent?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  previewContent_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  previewContent_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  previewContent_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values that are not equal to given value. */
+  previewContent_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  previewContent_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  previewContent_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  previewContent_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values not starting with the given string. */
+  previewContent_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  previewContent_starts_with?: InputMaybe<Scalars['String']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -2875,8 +2917,12 @@ export enum PostOrderByInput {
   CreatedAtDesc = 'createdAt_DESC',
   DateAsc = 'date_ASC',
   DateDesc = 'date_DESC',
+  DescriptionAsc = 'description_ASC',
+  DescriptionDesc = 'description_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
+  PreviewContentAsc = 'previewContent_ASC',
+  PreviewContentDesc = 'previewContent_DESC',
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
   SlugAsc = 'slug_ASC',
@@ -2894,6 +2940,8 @@ export type PostUpdateInput = {
   content?: InputMaybe<Scalars['String']>;
   coverImage?: InputMaybe<AssetUpdateOneInlineInput>;
   date?: InputMaybe<Scalars['Date']>;
+  description?: InputMaybe<Scalars['String']>;
+  previewContent?: InputMaybe<Scalars['String']>;
   slug?: InputMaybe<Scalars['String']>;
   tags?: InputMaybe<Array<Scalars['String']>>;
   title?: InputMaybe<Scalars['String']>;
@@ -2919,6 +2967,8 @@ export type PostUpdateManyInlineInput = {
 export type PostUpdateManyInput = {
   content?: InputMaybe<Scalars['String']>;
   date?: InputMaybe<Scalars['Date']>;
+  description?: InputMaybe<Scalars['String']>;
+  previewContent?: InputMaybe<Scalars['String']>;
   tags?: InputMaybe<Array<Scalars['String']>>;
 };
 
@@ -3035,6 +3085,25 @@ export type PostWhereInput = {
   date_not?: InputMaybe<Scalars['Date']>;
   /** All values that are not contained in given list. */
   date_not_in?: InputMaybe<Array<InputMaybe<Scalars['Date']>>>;
+  description?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  description_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  description_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values that are not equal to given value. */
+  description_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  description_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  description_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values not starting with the given string. */
+  description_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  description_starts_with?: InputMaybe<Scalars['String']>;
   documentInStages_every?: InputMaybe<PostWhereStageInput>;
   documentInStages_none?: InputMaybe<PostWhereStageInput>;
   documentInStages_some?: InputMaybe<PostWhereStageInput>;
@@ -3057,6 +3126,25 @@ export type PostWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
+  previewContent?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  previewContent_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  previewContent_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  previewContent_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values that are not equal to given value. */
+  previewContent_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  previewContent_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  previewContent_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  previewContent_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values not starting with the given string. */
+  previewContent_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  previewContent_starts_with?: InputMaybe<Scalars['String']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -6794,6 +6882,11 @@ export type HomeQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type HomeQuery = { __typename?: 'Query', authors: Array<{ __typename?: 'Author', id: string, name: string, intro: string, picture: { __typename?: 'Asset', url: string } }>, projects: Array<{ __typename?: 'Project', id: string, slug?: string | null, name: string, description: string, image: Array<{ __typename?: 'Asset', url: string }> }> };
 
+export type PostsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', title: string, id: string, description?: string | null, content: string, tags: Array<string>, previewContent?: string | null, coverImage: { __typename?: 'Asset', id: string, url: string } }> };
+
 export type ProjectDetailQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
@@ -6850,6 +6943,49 @@ export function useHomeLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<HomeQ
 export type HomeQueryHookResult = ReturnType<typeof useHomeQuery>;
 export type HomeLazyQueryHookResult = ReturnType<typeof useHomeLazyQuery>;
 export type HomeQueryResult = Apollo.QueryResult<HomeQuery, HomeQueryVariables>;
+export const PostsDocument = gql`
+    query Posts {
+  posts {
+    title
+    id
+    description
+    content
+    tags
+    previewContent
+    coverImage {
+      id
+      url
+    }
+  }
+}
+    `;
+
+/**
+ * __usePostsQuery__
+ *
+ * To run a query within a React component, call `usePostsQuery` and pass it any options that fit your needs.
+ * When your component renders, `usePostsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = usePostsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function usePostsQuery(baseOptions?: Apollo.QueryHookOptions<PostsQuery, PostsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<PostsQuery, PostsQueryVariables>(PostsDocument, options);
+      }
+export function usePostsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PostsQuery, PostsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<PostsQuery, PostsQueryVariables>(PostsDocument, options);
+        }
+export type PostsQueryHookResult = ReturnType<typeof usePostsQuery>;
+export type PostsLazyQueryHookResult = ReturnType<typeof usePostsLazyQuery>;
+export type PostsQueryResult = Apollo.QueryResult<PostsQuery, PostsQueryVariables>;
 export const ProjectDetailDocument = gql`
     query ProjectDetail($slug: String!) {
   project(where: {slug: $slug}) {
