@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
-
-import * as SC from './styles'
+import { Link } from "react-router-dom";
+import LogoImage from "../../assets/logo.svg";
+import * as SC from "./styles";
 
 interface HeaderProps {
   title: string;
@@ -11,17 +11,17 @@ export const Header = ({ title }: HeaderProps) => {
     <SC.Container>
       <SC.Nav>
         <Link to="/">
-          <h2>{title}</h2>
+          <img src={LogoImage} alt="" />
         </Link>
-        
+
         <div>
           <ul>
             <li>
               <Link to="/">Portifolio</Link>
             </li>
-              <li>
-                <Link to="/blog">Blog</Link>
-              </li>
+            <li>
+              <Link to="/blog">Blog</Link>
+            </li>
             <li>
               <Link to="/">About</Link>
             </li>
@@ -29,5 +29,5 @@ export const Header = ({ title }: HeaderProps) => {
         </div>
       </SC.Nav>
     </SC.Container>
-  )
-}
+  );
+};
