@@ -43,7 +43,7 @@ export const DescriptionContainer = styled.section`
 `
 
 export const TextMarkDown = styled.div`
-  width: 70%;
+  width: 40%;
   margin-top: 4rem;
   padding: 1rem;
 

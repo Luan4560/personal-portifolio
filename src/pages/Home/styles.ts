@@ -62,10 +62,18 @@ export const Container = styled.div`
       text-align: center;
     }
 
+
+
     section {
       flex-direction: column-reverse;
       align-items: center;
       text-align: center;
+
+      p {
+      width: 20rem;
+      font-size: 1rem;
+      margin: 0;
+    }
 
       h2 {
         margin-top: 1.5rem;
@@ -91,8 +99,8 @@ export const Container = styled.div`
       }
 
       p {
-        width: 23rem;
-        font-size: 1rem;
+        width: 18rem;
+        font-size: 0.75rem;
         margin: 0;
       }
     }

@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const Container = styled.footer`
   width: 100vw;
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
   margin-top: 2rem;
-  padding: 5rem 0;
-  background-color:${({theme}) => theme.palette.common.secondary};
+  padding: 2rem 0;
+  background-color:${({ theme }) => theme.palette.common.secondary};
   overflow: hidden;
 
   p {
@@ -26,11 +26,11 @@ export const Container = styled.footer`
     }
 
     a {
-      color: ${({theme}) => theme.palette.common.text};
+      color: ${({ theme }) => theme.palette.common.text};
       transition: 0.5s;
 
       :hover {
-        color: ${({theme}) => theme.palette.common.purple};
+        color: ${({ theme }) => theme.palette.common.purple};
       }
     }
   }
