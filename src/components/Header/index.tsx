@@ -2,11 +2,7 @@ import { Link } from "react-router-dom";
 import LogoImage from "../../assets/logo.svg";
 import * as SC from "./styles";
 
-interface HeaderProps {
-  title: string;
-}
-
-export const Header = ({ title }: HeaderProps) => {
+export const Header = () => {
   return (
     <SC.Container>
       <SC.Nav>
@@ -23,7 +19,7 @@ export const Header = ({ title }: HeaderProps) => {
               <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <Link to="/">About</Link>
+              <Link to="/about">About</Link>
             </li>
           </ul>
         </div>

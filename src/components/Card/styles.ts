@@ -6,6 +6,8 @@ export const Container = styled.div`
   border-radius: 10px;
   cursor: pointer;
   border: 1px solid ${({ theme }) => theme.palette.common.text};
+  max-width: 100% !important;
+  overflow-x: hidden !important ;
 
 img {
   border-radius: 10px;

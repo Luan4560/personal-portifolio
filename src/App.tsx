@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Header title="Potifolio and Blog" />
+        <Header />
         <Router />
         <Footer />
       </BrowserRouter>

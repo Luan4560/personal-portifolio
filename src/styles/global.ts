@@ -8,6 +8,11 @@ export const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  html, body {
+  max-width: 100% !important;
+  overflow-x: hidden !important ;
+}
+
   body {
     ${({ theme }) => css`
       font-family: 'Roboto', sans-serif;
