@@ -43,10 +43,9 @@ export const DescriptionContainer = styled.section`
 `
 
 export const TextMarkDown = styled.div`
-  width: 40%;
+  width: 70%;
+  padding: 0 5rem;
   margin-top: 4rem;
-  padding: 1rem;
-
   a {
     color: pink;
   }

@@ -1,5 +1,5 @@
 query ProjectDetail($slug: String!) {
-  project(where: {slug: $slug}) {
+  project(where: { slug: $slug }) {
     id
     image {
       url
@@ -9,5 +9,6 @@ query ProjectDetail($slug: String!) {
     demo
     tags
     sourceCode
+    createdAt
   }
 }

@@ -1,17 +1,18 @@
-  query Home {
-    authors {
-      id
-      name
-      intro
-      picture {
-        url
-      }
+query Home {
+  authors {
+    id
+    name
+    intro
+    picture {
+      url
     }
+  }
   projects {
     id
     slug
     name
     description
+    createdAt
     image {
       url
     }

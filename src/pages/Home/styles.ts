@@ -7,6 +7,7 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   padding: 1rem;
+  margin-top: 4rem;
   
   h1 {
     margin: 4rem 0px;
@@ -27,23 +28,25 @@ export const Container = styled.div`
     }
     
     p {
-      width: 32.5rem;
+      width: 48.5rem;
       margin-right: 3rem;
       font-size: 1.25rem;
       line-height: 1.75rem;
       opacity: 0.8;
+      text-align: justify;
     }
 
   .profile-image img {
       width: 10rem;
       height: 10rem;
       border-radius: 50%;
+      object-fit: cover;
       border: 2px solid ${({ theme }) => theme.palette.common.text};
     }
   }
 
   .card-content {
-    width: 65%;
+    width: 52%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     grid-gap: 2rem;
@@ -58,11 +61,10 @@ export const Container = styled.div`
 
   /* Mobile */
   @media(max-width: 48rem) {
+    margin: 0 auto;
     h1 {
       text-align: center;
     }
-
-
 
     section {
       flex-direction: column-reverse;
@@ -70,9 +72,11 @@ export const Container = styled.div`
       text-align: center;
 
       p {
-      width: 20rem;
       font-size: 1rem;
       margin: 0;
+      width: 23rem;
+      text-align: justify;
+      letter-spacing: 1px;
     }
 
       h2 {
@@ -81,8 +85,10 @@ export const Container = styled.div`
     }
 
     .card-content {
-      grid-template-columns: 1fr 1fr ;
-      grid-gap: 2rem;
+      grid-template-columns: 67% 67% ;
+      grid-gap: 1rem;
+      margin-right: 1rem;
+
     }
   }
 
@@ -99,15 +105,17 @@ export const Container = styled.div`
       }
 
       p {
-        width: 18rem;
-        font-size: 0.75rem;
+        width: 13rem;
+        font-size: 1rem;
         margin: 0;
+        text-align: justify;
       }
     }
 
     .card-content {
       grid-template-columns: 1fr ;
       grid-gap: 2rem;
+
     }
   }
 `

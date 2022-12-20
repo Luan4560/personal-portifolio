@@ -12,8 +12,6 @@ export const Home = () => {
   return (
     <>
       <SC.Container>
-        <h1>Welcome to my portifolio</h1>
-
         {data?.authors.map((item) => (
           <section key={item.id}>
             <div>
@@ -27,15 +25,18 @@ export const Home = () => {
         ))}
 
         <section className="card-content">
-          {data?.projects.map((item) => (
-            <Link to={`${item.slug}`} key={item.id}>
-              <Card
-                title={item.name}
-                description={item.description}
-                image={item.image[0].url}
-              />
-            </Link>
-          ))}
+          {data?.projects
+            .slice(0)
+            .reverse()
+            .map((item) => (
+              <Link to={`${item.slug}`} key={item.id}>
+                <Card
+                  title={item.name}
+                  description={item.description}
+                  image={item.image[0].url}
+                />
+              </Link>
+            ))}
         </section>
       </SC.Container>
     </>
