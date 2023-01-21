@@ -1,11 +1,10 @@
 query AboutMe {
-  aboutMe(where: {id: "cl8ntt2s80duq0cmn9ascjad0"}) {
+  aboutMe(where: { id: "cl8ntt2s80duq0cmn9ascjad0" }) {
     id
     name
-    description
+    stack
     profileImage {
       url
     }
-    textAboutMe
   }
 }

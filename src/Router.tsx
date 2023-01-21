@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import { About } from "./pages/About";
 import { Blog } from "./pages/Blog";
 import { Home } from "./pages/Home";
 import { ProjectDetail } from "./pages/ProjectDetail";
+import { StackPage } from "./pages/StackPage";
 
 export const Router = () => {
   return (
@@ -10,7 +10,7 @@ export const Router = () => {
       <Route path="/" element={<Home />} />
       <Route path="/:id" element={<ProjectDetail />} />
       <Route path="/blog" element={<Blog />} />
-      <Route path="/about" element={<About />} />
+      <Route path="/about" element={<StackPage />} />
     </Routes>
   );
 };

@@ -18,6 +18,7 @@ export const DescriptionContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction:  column;
   gap: 2rem;
 
    h2 {
@@ -40,6 +41,10 @@ export const DescriptionContainer = styled.section`
     height: 10rem;
     border-radius: 50%;
   }
+
+  .img-profile {
+    margin-top: 1rem;
+  }
 `
 
 export const TextMarkDown = styled.div`
@@ -49,4 +54,10 @@ export const TextMarkDown = styled.div`
   a {
     color: pink;
   }
+`
+
+export const StackContainer = styled.section`
+  width: 100%;
+
+
 `

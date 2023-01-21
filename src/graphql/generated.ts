@@ -43,9 +43,9 @@ export type AboutMe = Node & {
   /** User that last published this document */
   publishedBy?: Maybe<User>;
   scheduledIn: Array<ScheduledOperation>;
+  stack?: Maybe<Scalars['Json']>;
   /** System stage field */
   stage: Stage;
-  textAboutMe?: Maybe<Scalars['String']>;
   /** The time the document was updated */
   updatedAt: Scalars['DateTime'];
   /** User that last updated this document */
@@ -124,7 +124,7 @@ export type AboutMeCreateInput = {
   description?: InputMaybe<Scalars['String']>;
   name: Scalars['String'];
   profileImage?: InputMaybe<AssetCreateOneInlineInput>;
-  textAboutMe?: InputMaybe<Scalars['String']>;
+  stack?: InputMaybe<Scalars['Json']>;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
 };
 
@@ -257,25 +257,6 @@ export type AboutMeManyWhereInput = {
   scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
-  textAboutMe?: InputMaybe<Scalars['String']>;
-  /** All values containing the given string. */
-  textAboutMe_contains?: InputMaybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  textAboutMe_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  textAboutMe_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** All values that are not equal to given value. */
-  textAboutMe_not?: InputMaybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  textAboutMe_not_contains?: InputMaybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  textAboutMe_not_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are not contained in given list. */
-  textAboutMe_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** All values not starting with the given string. */
-  textAboutMe_not_starts_with?: InputMaybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  textAboutMe_starts_with?: InputMaybe<Scalars['String']>;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   updatedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -305,8 +286,6 @@ export enum AboutMeOrderByInput {
   NameDesc = 'name_DESC',
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
-  TextAboutMeAsc = 'textAboutMe_ASC',
-  TextAboutMeDesc = 'textAboutMe_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
   UpdatedAtDesc = 'updatedAt_DESC'
 }
@@ -315,7 +294,7 @@ export type AboutMeUpdateInput = {
   description?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
   profileImage?: InputMaybe<AssetUpdateOneInlineInput>;
-  textAboutMe?: InputMaybe<Scalars['String']>;
+  stack?: InputMaybe<Scalars['Json']>;
 };
 
 export type AboutMeUpdateManyInlineInput = {
@@ -337,7 +316,7 @@ export type AboutMeUpdateManyInlineInput = {
 
 export type AboutMeUpdateManyInput = {
   description?: InputMaybe<Scalars['String']>;
-  textAboutMe?: InputMaybe<Scalars['String']>;
+  stack?: InputMaybe<Scalars['Json']>;
 };
 
 export type AboutMeUpdateManyWithNestedWhereInput = {
@@ -495,25 +474,6 @@ export type AboutMeWhereInput = {
   scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
-  textAboutMe?: InputMaybe<Scalars['String']>;
-  /** All values containing the given string. */
-  textAboutMe_contains?: InputMaybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  textAboutMe_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  textAboutMe_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** All values that are not equal to given value. */
-  textAboutMe_not?: InputMaybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  textAboutMe_not_contains?: InputMaybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  textAboutMe_not_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are not contained in given list. */
-  textAboutMe_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** All values not starting with the given string. */
-  textAboutMe_not_starts_with?: InputMaybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  textAboutMe_starts_with?: InputMaybe<Scalars['String']>;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   updatedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -7683,7 +7643,7 @@ export enum _SystemDateTimeFieldVariation {
 export type AboutMeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AboutMeQuery = { __typename?: 'Query', aboutMe?: { __typename?: 'AboutMe', id: string, name: string, description?: string | null, textAboutMe?: string | null, profileImage?: { __typename?: 'Asset', url: string } | null } | null };
+export type AboutMeQuery = { __typename?: 'Query', aboutMe?: { __typename?: 'AboutMe', id: string, name: string, stack?: any | null, profileImage?: { __typename?: 'Asset', url: string } | null } | null };
 
 export type HomeQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -7708,11 +7668,10 @@ export const AboutMeDocument = gql`
   aboutMe(where: {id: "cl8ntt2s80duq0cmn9ascjad0"}) {
     id
     name
-    description
+    stack
     profileImage {
       url
     }
-    textAboutMe
   }
 }
     `;
