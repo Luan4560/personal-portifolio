@@ -56,8 +56,8 @@ export const TextMarkDown = styled.div`
   }
 `
 
-export const StackContainer = styled.section`
-  width: 100%;
-
-
+export const StackContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
 `

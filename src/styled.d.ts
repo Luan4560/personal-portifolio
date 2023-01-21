@@ -21,8 +21,6 @@ declare module 'styled-components' {
         yellow: string
         textTwo: string;
       }
-      // primary: IPalette
-      // secondary: IPalette
-   }
+    }
   }
 }

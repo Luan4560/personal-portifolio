@@ -1,10 +1,13 @@
 import * as SC from "./styles";
 import { useAboutMeQuery } from "../../graphql/generated";
 import { Loading } from "../../components/Loading";
-import { HtmlIcon } from "../../components/Icons/HtmlIcon";
+import { TagStack } from "../../components/TagStack";
+import { useContext } from "react";
+import { StackContext } from "../../context/StackContext";
 
 export const StackPage = () => {
   const { data, loading, error } = useAboutMeQuery();
+  const { stack } = useContext(StackContext);
 
   if (loading) return <Loading />;
 
@@ -15,14 +18,10 @@ export const StackPage = () => {
           <img src={data?.aboutMe?.profileImage?.url} alt="" />
         </div>
       </SC.DescriptionContainer>
-
       <SC.StackContainer>
-        <div className="stack">
-          <h3>HTML</h3>
-          <div>
-            <HtmlIcon />
-          </div>
-        </div>
+        {stack.map((item: any) => {
+          return <TagStack name={item.name} icon={item.icon} />;
+        })}
       </SC.StackContainer>
     </SC.Container>
   );

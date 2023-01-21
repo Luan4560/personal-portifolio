@@ -10,7 +10,7 @@ export const theme: DefaultTheme = {
       comment: "#a9becc",
       purple: "#a9becc",
 
-      cyan: "##8be9fd",
+      cyan: "#8be9fd",
       green: "#50fa7b",
       orange: "#ffb86c",
       pink: "#a9becc",
