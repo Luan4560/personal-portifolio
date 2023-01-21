@@ -30,7 +30,6 @@ export const SectionBio = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     grid-gap: 2rem;
-    margin-top: 5rem;
   }
 
   .card-content img {
@@ -119,8 +118,7 @@ export const BioContent = styled.div`
       line-height: 1.75rem;
       opacity: 0.8;
       text-align: justify;
-    color: ${({ theme }) => theme.palette.common.textTwo};
-
+      color: ${({ theme }) => theme.palette.common.textTwo};
     }
 
   .profile-image img {
@@ -130,9 +128,7 @@ export const BioContent = styled.div`
       object-fit: cover;
       border: 2px solid ${({ theme }) => theme.palette.common.text};
     }
-
 `
-
 export const StackContainer = styled.section`
   display: flex;
   flex-direction: column;
@@ -141,5 +137,4 @@ export const StackContainer = styled.section`
 export const Stack = styled.div`
   width: 54%; 
   display: flex;
-  margin-top: 2rem;
 `
