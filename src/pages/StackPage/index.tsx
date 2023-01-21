@@ -11,6 +11,8 @@ export const StackPage = () => {
 
   if (loading) return <Loading />;
 
+  if (error) return <p>Erro ao carregar</p>;
+
   return (
     <SC.Container>
       <SC.DescriptionContainer>
@@ -19,8 +21,8 @@ export const StackPage = () => {
         </div>
       </SC.DescriptionContainer>
       <SC.StackContainer>
-        {stack.map((item: any) => {
-          return <TagStack name={item.name} icon={item.icon} />;
+        {stack.map((item) => {
+          return <TagStack key={item.id} name={item.name} icon={item.icon} />;
         })}
       </SC.StackContainer>
     </SC.Container>

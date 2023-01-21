@@ -7,8 +7,8 @@ import { JavascriptIcon } from "../components/Icons/JavascriptIcon";
 import { JestIcon } from "../components/Icons/JestIcon";
 import { NextIcon } from "../components/Icons/NextIcon";
 import { ReactIcon } from "../components/Icons/ReactIcon";
+import { ReactNativeIcon } from "../components/Icons/ReactNativeIcon";
 import { TypescriptIcon } from "../components/Icons/ReactNativeIcon copy";
-import { ReactNativeIcon } from "../components/Icons/TypescriptIcon";
 
 const stack = [
   {

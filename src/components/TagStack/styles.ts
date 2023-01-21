@@ -10,6 +10,7 @@ export const StackContainer = styled.section`
   p {
     font-size: 1rem;
     margin-top: 0.75rem;
+    color: ${({ theme }) => theme.palette.common.textTwo};
   }
 
   .icon {

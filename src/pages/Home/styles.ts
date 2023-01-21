@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.main`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
+export const SectionBio = styled.div`
   display: flex;
   flex-direction: column;
   align-items:  center;
@@ -8,41 +16,13 @@ export const Container = styled.div`
   width: 100%;
   padding: 1rem;
   margin-top: 4rem;
+  gap: 4rem;
+
   
   h1 {
     margin: 4rem 0px;
     font-size: 3rem;
     opacity: 0.8;
-  }
-  
-  section {
-    display: flex;
-    align-items:  center;
-    justify-content: center;
-
-    h2 {
-      margin-bottom: 1rem;
-      font-size: 1.875rem;
-      font-weight: bold;
-      opacity: 0.8;
-    }
-    
-    p {
-      width: 48.5rem;
-      margin-right: 3rem;
-      font-size: 1.25rem;
-      line-height: 1.75rem;
-      opacity: 0.8;
-      text-align: justify;
-    }
-
-  .profile-image img {
-      width: 10rem;
-      height: 10rem;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid ${({ theme }) => theme.palette.common.text};
-    }
   }
 
   .card-content {
@@ -118,4 +98,48 @@ export const Container = styled.div`
 
     }
   }
+`
+
+export const BioContent = styled.div`
+    display: flex;
+    align-items:  center;
+    justify-content: center;
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.875rem;
+      font-weight: bold;
+      opacity: 0.8;
+    }
+    
+    p {
+      width: 48.5rem;
+      margin-right: 3rem;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      opacity: 0.8;
+      text-align: justify;
+    color: ${({ theme }) => theme.palette.common.textTwo};
+
+    }
+
+  .profile-image img {
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid ${({ theme }) => theme.palette.common.text};
+    }
+
+`
+
+export const StackContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+`
+
+export const Stack = styled.div`
+  width: 54%; 
+  display: flex;
+  margin-top: 2rem;
 `
