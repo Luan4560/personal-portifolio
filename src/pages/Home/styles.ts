@@ -67,6 +67,8 @@ export const SectionBio = styled.div`
       grid-template-columns: 67% 67% ;
       grid-gap: 1rem;
       margin-right: 1rem;
+      align-content: center;
+      justify-content: center;
 
     }
   }
@@ -127,14 +129,55 @@ export const BioContent = styled.div`
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid ${({ theme }) => theme.palette.common.text};
+  }
+
+  @media(max-width: 996px) {
+    display: flex;
+    flex-direction: column-reverse;
+    
+    p {
+      width: 50rem;
     }
+  }
+  
+  @media(max-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+    
+    p {
+      width: 45rem;
+    }
+
+
+  }
+  
+  @media(max-width:500px) {
+    p {
+      width: 15rem;
+      text-align: center;
+    }
+
+    .profile-image img  {
+      margin-right: 3rem;
+    }
+  }
 `
 export const StackContainer = styled.section`
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background: red;
 `
 
 export const Stack = styled.div`
   width: 54%; 
   display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media(max-width: 768px) { 
+    display: none;
+  }
 `

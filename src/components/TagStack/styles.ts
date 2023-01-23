@@ -8,7 +8,7 @@ export const StackContainer = styled.section`
   flex-direction: column;
 
   p {
-    font-size: 1rem;
+    font-size: 0.75rem;
     margin-top: 0.75rem;
     color: ${({ theme }) => theme.palette.common.textTwo};
   }
@@ -20,4 +20,11 @@ export const StackContainer = styled.section`
     justify-content: center;
     border-radius: 50%;
   }
+
+  @media(max-width: 1024px) {
+    p {
+      font-size: 0.60rem;
+    }
+   }
+
 `
