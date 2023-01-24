@@ -147,8 +147,6 @@ export const BioContent = styled.div`
     p {
       width: 45rem;
     }
-
-
   }
   
   @media(max-width:500px) {

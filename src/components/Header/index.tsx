@@ -18,9 +18,9 @@ export const Header = () => {
             {/* <li>
               <Link to="/blog">Blog</Link>
             </li> */}
-            <li>
+            {/* <li>
               <Link to="/about">Stack</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </SC.Nav>

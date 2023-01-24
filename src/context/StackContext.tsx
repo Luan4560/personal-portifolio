@@ -46,21 +46,6 @@ const stack = [
     name: "Unit Tests",
     icon: <JestIcon />,
   },
-  {
-    id: 8,
-    name: "CSS",
-    icon: <CssIcon />,
-  },
-  {
-    id: 9,
-    name: "HTML",
-    icon: <HtmlIcon />,
-  },
-  {
-    id: 10,
-    name: "Javascript",
-    icon: <JavascriptIcon />,
-  },
 ];
 
 interface StackProps {
