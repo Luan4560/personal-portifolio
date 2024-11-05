@@ -9,42 +9,55 @@ import { NextIcon } from "../components/Icons/NextIcon";
 import { ReactIcon } from "../components/Icons/ReactIcon";
 import { ReactNativeIcon } from "../components/Icons/ReactNativeIcon";
 import { TypescriptIcon } from "../components/Icons/ReactNativeIcon copy";
+import Web3Icon from "../components/Icons/Web3Icon";
+import SolidityIcon from "../components/Icons/SolidityIcon";
+import NodeIcon from "../components/Icons/NodeIcon";
 
 const stack = [
   {
+    id: 0,
+    name: "Nodejs",
+    icon: <NodeIcon />,
+  },
+  {
     id: 1,
+    name: "Solidity",
+    icon: <SolidityIcon />,
+  },
+  {
+    id: 2,
+    name: "Web3/Blockchain",
+    icon: <Web3Icon />,
+  },
+  {
+    id: 3,
     name: "Typescript",
     icon: <TypescriptIcon />,
   },
   {
-    id: 2,
+    id: 4,
     name: "React",
     icon: <ReactIcon />,
   },
   {
-    id: 3,
+    id: 5,
     name: "React Native",
     icon: <ReactNativeIcon />,
   },
   {
-    id: 4,
+    id: 6,
     name: "NextJS",
     icon: <NextIcon />,
   },
   {
-    id: 5,
+    id: 7,
     name: "GraphQL",
     icon: <GraphQLlIcon />,
   },
   {
-    id: 6,
+    id: 8,
     name: "Apollo",
     icon: <ApolloIcon />,
-  },
-  {
-    id: 7,
-    name: "Unit Tests",
-    icon: <JestIcon />,
   },
 ];
 
