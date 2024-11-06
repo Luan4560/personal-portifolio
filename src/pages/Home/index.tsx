@@ -21,7 +21,7 @@ export const Home = () => {
         {data?.authors.map((item) => (
           <SC.BioContent key={item.id}>
             <div>
-              <h2>{item.name}</h2>
+              <h2>{item.name} </h2>
               <p>{item.intro}</p>
             </div>
             <div className="profile-image">
